@@ -28,12 +28,14 @@ function successPosition(position) {
 	// http://www.w3schools.com/html/html5_geolocation.asp
 	
     var unixtime = new Date(position.timestamp);
+
     var date = unixtime.toDateString();
 
 	//lets get some stuff out of the position object
 	var time = position.timestamp;
 	var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
+    var accuracy = position.accuracy;
     
 
     
@@ -41,9 +43,10 @@ function successPosition(position) {
 
 	
 	//OK. Now we want to update the display with the correct values
-	$('#time').val("Recieved data at " + time);
+	$('#time').val("Recieved data at " + date);
 	$('#lattext').val(latitude);
     $('#longtext').val(longitude);
+    $('#accuracy').val(accuracy);
 	
 }
 
