@@ -32,6 +32,10 @@ function successPosition(position) {
 	var time = position.timestamp;
 	var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
+    
+    var unixtime = new Date(position.timestamp);
+    var date = unixtime.toDateString();
+
 	
 	//OK. Now we want to update the display with the correct values
 	$('#time').val("Recieved data at " + time);
